@@ -1,4 +1,3 @@
-// the base route tests will go here
 import mocha from "mocha";
 import chai, { expect } from "chai";
 import chaiHttp from "chai-http";

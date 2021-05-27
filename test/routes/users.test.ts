@@ -1,4 +1,3 @@
-// To test the users route
 import mocha from "mocha";
 import chai, { expect } from "chai";
 import chaiHttp from "chai-http";
