@@ -84,13 +84,11 @@ const updateUserById = async (id: string, user: IUser) => {
 		if (value && allowedFields.includes(key)) toUpdate[key] = value;
 	}
 
-	const oldUser = await User.findByIdAndUpdate(id, { $set: toUpdate }, {new: true}
+	const updatedUser = await User.findByIdAndUpdate(
+		id,
+		{ $set: toUpdate },
+		{ new: true }
 	);
-
-	if (!oldUser)
-		throw new ResourceNotFoundError(`User with id ${id} not found`);
-
-	const updatedUser = await User.findById(id);
 
 	// This should never happen, but the check was necessary for typesafety.
 	if (!updatedUser)
